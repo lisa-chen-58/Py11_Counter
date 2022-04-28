@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1 class="text-secondary d-flex justify-content-center">Counter</h1>
+
+    <h3 class="d-flex justify-content-center">{{session['count']}} time(s)</h3>
+
+    <div class="d-flex justify-content-center">
+        <a type="button" class= "btn btn-primary mx-1" href="/add_two">Add 2 views</a>
+        <a type="button" class= "btn btn-danger" href="/destroy_session">Reset</a>
+    </div>
+    <br>
+<!-- DID NOT GET THIS TO WORK YET -->
+    <!-- <form class="d-flex justify-content-center" action='/add_num' method="POST">
+        <label for='num'></label>
+        <input type='number' name='num'>
+
+        <a style="margin: 5px;" type="button" class="btn btn-success">Add this to counter</a>
+    </form> -->
+</body>
+</html>
