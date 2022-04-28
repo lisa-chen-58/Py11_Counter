@@ -8,6 +8,7 @@ def index():
         session["count"]=0
     else:
         session["count"] +=1
+        print('hi')
     return render_template("index.html")
 
 @app.route('/add_two')
@@ -15,17 +16,18 @@ def add_two():
     if "count" not in session:
         session["count"]=0
     else:
-        session["count"] +=1
-    return redirect('/')
+        session["count"] +=1 #adds one
+        print('hello') 
+    return redirect('/') #adds another one upon refresh
 
-# Supposed to allow user input for increment
-# @app.route('/add_num', methods=['POST'])
-# def add_num(num):
-#     if "count" not in session:
-#         session["count"]=0
-#     else:
-#         session["count"] += num
-#     return redirect('/',num=num)
+@app.route('/<int:num>')
+def some_number(num):
+    if 'count' not in session:
+        session["count"]=0
+    else:
+        session["count"] += num
+        print('hi')
+    return render_template("index.html", num=num)
 
 @app.route('/destroy_session')
 def reset():
