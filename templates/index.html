@@ -17,12 +17,16 @@
         <a type="button" class= "btn btn-danger" href="/destroy_session">Reset</a>
     </div>
     <br>
-<!-- DID NOT GET THIS TO WORK YET -->
-    <!-- <form class="d-flex justify-content-center" action='/add_num' method="POST">
+    <form class="d-flex justify-content-center" action='/add_num' method="POST">
         <label for='num'></label>
-        <input type='number' name='num'>
-
-        <a style="margin: 5px;" type="button" class="btn btn-success">Add this to counter</a>
-    </form> -->
+        <input type='number' name='num' min="1" max = "5">
+        <button 
+            style="margin: 5px;" 
+            type="submit" 
+            class="btn btn-primary mx-1" 
+            href="/add_num">
+            Add this to counter
+        </button>
+    </form>
 </body>
 </html>

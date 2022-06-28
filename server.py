@@ -20,14 +20,14 @@ def add_two():
         print('hello') 
     return redirect('/') #adds another one upon refresh
 
-@app.route('/<int:num>')
-def some_number(num):
+@app.route('/add_num', methods=["POST"])
+def some_number():
     if 'count' not in session:
         session["count"]=0
     else:
-        session["count"] += num
-        print('hi')
-    return render_template("index.html", num=num)
+        num = request.form['num']
+        session["count"] += int(num)-1
+    return redirect('/')
 
 @app.route('/destroy_session')
 def reset():
